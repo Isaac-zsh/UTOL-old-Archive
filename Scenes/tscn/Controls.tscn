@@ -1,0 +1,263 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scripts/Controls.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/HoverBarButton.tres" type="StyleBox" id=2]
+[ext_resource path="res://Scripts/PressedBarButton.tres" type="StyleBox" id=3]
+[ext_resource path="res://Sprites/Logos/UTOL.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/TitleBar.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Sprites/RoomTesting/1bg_border_ruins.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Sprites/RoomTesting/2bg_border_ruins.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Borders/bg_border_truelab.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Characters/Temmie/Temmie.png" type="Texture" id=9]
+[ext_resource path="res://Audios/networkscreen/mus_shop2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sprites/DialogueBox/1.png" type="Texture" id=11]
+[ext_resource path="res://SFX/click.wav" type="AudioStream" id=12]
+
+[sub_resource type="DynamicFontData" id=1]
+resource_local_to_scene = true
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "3",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "2",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "1",
+"speed": 0.0
+} ]
+
+[sub_resource type="DynamicFontData" id=4]
+resource_local_to_scene = true
+antialiased = false
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+resource_local_to_scene = true
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.180392, 0.180392, 0.360784, 0 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Fonts/ttf/arial.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 8 )
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=12]
+resource_local_to_scene = true
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 960.0
+margin_bottom = 540.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+margin_right = 960.0
+margin_bottom = 540.0
+custom_fonts/font = SubResource( 2 )
+text = "Controls:
+
+Move - Arrows
+Interact - Z/ENTER
+Inventory - C
+Run/Skip Dialogue - Shift/X
+Chat - T
+Close/Go Back - ESCAPE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control"]
+margin_top = 427.0
+margin_right = 960.0
+margin_bottom = 460.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+text = "Go Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 480, 270 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 3 )
+animation = "1"
+
+[node name="BGSONG" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="TitleBar" type="Control" parent="."]
+margin_right = 960.0
+margin_bottom = 25.0
+mouse_filter = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UTOL" type="Sprite" parent="TitleBar"]
+position = Vector2( 12, 13 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="TitleBar"]
+margin_left = 24.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 5 )
+text = "Undertale Online"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 914.0
+margin_right = 960.0
+margin_bottom = 25.0
+mouse_filter = 1
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinimizeButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 868.0
+margin_right = 914.0
+margin_bottom = 25.0
+mouse_filter = 1
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
+text = "−"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 160.0
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 509.0
+mouse_filter = 1
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+autoplay = "FadeIn"
+anims/FadeIn = SubResource( 10 )
+anims/FadeOut = SubResource( 11 )
+
+[node name="Temmie" type="Sprite" parent="."]
+position = Vector2( 868, 509 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+
+[node name="1" type="Sprite" parent="."]
+position = Vector2( 752, 480 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 703.0
+margin_top = 427.0
+margin_right = 788.0
+margin_bottom = 533.0
+custom_fonts/font = SubResource( 12 )
+text = "Epic Control menu right?"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+volume_db = 10.0
+
+[connection signal="gui_input" from="TitleBar" to="TitleBar" method="_on_TitleBar_gui_input"]
+[connection signal="pressed" from="ExitButton" to="TitleBar" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="MinimizeButton" to="TitleBar" method="_on_MinimizeButton_pressed"]
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

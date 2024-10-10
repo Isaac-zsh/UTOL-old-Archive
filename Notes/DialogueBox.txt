@@ -1,0 +1,9 @@
+DialogueBox:
+	Top: 
+		x: 192 ,
+		y: 64
+
+	Bottom: 
+		x: 192,
+		y: 328
+		pass

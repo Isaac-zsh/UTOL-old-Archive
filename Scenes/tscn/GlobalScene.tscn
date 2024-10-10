@@ -1,0 +1,911 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://Scripts/GlobalScene.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Sprites/RoomTesting/2bg_border_ruins.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/TitleBar.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Logos/UTOL.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Player_sFaces.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://Sprites/UI/Inv/stick6.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/PressedBarButton.tres" type="StyleBox" id=7]
+[ext_resource path="res://Scripts/HoverBarButton.tres" type="StyleBox" id=8]
+[ext_resource path="res://Scripts/AnimatedSprite2.gd" type="Script" id=9]
+[ext_resource path="res://Sprites/UI/Inv/book_but_better.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/UI/Inv/book_but_betteryellow.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/UI/Inv/cellphone1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/UI/Inv3.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/UI/Inv/cellphone.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/UI/Inv/cellphone1yellow.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Borders/1bg_border_ruins.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/UI/Inv/stick6yellow.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/UI/Inv/cellphoneyellow.png" type="Texture" id=19]
+[ext_resource path="res://SFX/select.wav" type="AudioStream" id=20]
+[ext_resource path="res://SFX/click.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sprites/UI/Inv/skin_iconyellow.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/UI/Inv/skin_icon.png" type="Texture" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": false,
+"name": "UndertaleInv",
+"speed": 0.0
+} ]
+
+[sub_resource type="DynamicFontData" id=2]
+resource_local_to_scene = true
+antialiased = false
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+resource_local_to_scene = true
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
+font_data = SubResource( 2 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 17 ) ],
+"loop": false,
+"name": "Selected",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "NotSelected",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Selected",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "NotSelected",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "Selected",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "NotSelected",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 24 ) ],
+"loop": false,
+"name": "Selected",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": false,
+"name": "NotSelected",
+"speed": 0.0
+} ]
+
+[sub_resource type="DynamicFont" id=8]
+resource_local_to_scene = true
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
+font_data = SubResource( 2 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "2",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": false,
+"name": "1",
+"speed": 0.0
+} ]
+
+[sub_resource type="Animation" id=11]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=13]
+resource_local_to_scene = true
+antialiased = false
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+resource_local_to_scene = true
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 13 )
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.180392, 0.180392, 0.360784, 0 )
+
+[sub_resource type="DynamicFontData" id=17]
+font_path = "res://Fonts/ttf/arial.ttf"
+
+[sub_resource type="DynamicFont" id=18]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 17 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 480.595, 290.405 )
+frames = SubResource( 1 )
+animation = "UndertaleInv"
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/AnimatedSprite2"]
+position = Vector2( -265.506, -198 )
+frames = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="CanvasLayer/AnimatedSprite2"]
+margin_left = -215.5
+margin_top = -229.0
+margin_right = 297.5
+margin_bottom = -196.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/AnimatedSprite2"]
+margin_left = -192.0
+margin_top = -201.0
+margin_right = -77.0
+margin_bottom = -168.0
+custom_fonts/font = SubResource( 3 )
+text = "LV: 1"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CanvasLayer/AnimatedSprite2"]
+margin_left = -24.0
+margin_top = -201.0
+margin_right = 91.0
+margin_bottom = -168.0
+custom_fonts/font = SubResource( 3 )
+text = "HP: 20"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="CanvasLayer/AnimatedSprite2"]
+margin_left = 150.0
+margin_top = -201.0
+margin_right = 282.0
+margin_bottom = -168.0
+custom_fonts/font = SubResource( 3 )
+text = "G: 0"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersMenu" type="Control" parent="CanvasLayer/AnimatedSprite2"]
+margin_left = -299.0
+margin_top = -153.0
+margin_right = 299.0
+margin_bottom = -71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM" type="Control" parent="CanvasLayer/AnimatedSprite2/PlayersMenu"]
+margin_left = -6.00198
+margin_top = 15.9728
+margin_right = 153.998
+margin_bottom = 63.9728
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersMenu/ITEM"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -16.5
+margin_right = 7.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+text = "ITEM"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/AnimatedSprite2/PlayersMenu/ITEM"]
+position = Vector2( 36.823, 20.1951 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 4 )
+animation = "Selected"
+
+[node name="STAT" type="Control" parent="CanvasLayer/AnimatedSprite2/PlayersMenu"]
+margin_left = 153.998
+margin_top = 15.9728
+margin_right = 313.998
+margin_bottom = 63.9728
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersMenu/STAT"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -16.5
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "STAT"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/AnimatedSprite2/PlayersMenu/STAT"]
+position = Vector2( 28.823, 20.1951 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 5 )
+animation = "NotSelected"
+
+[node name="CELL" type="Control" parent="CanvasLayer/AnimatedSprite2/PlayersMenu"]
+margin_left = 302.998
+margin_top = 15.9728
+margin_right = 462.998
+margin_bottom = 63.9728
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersMenu/CELL"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -16.5
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "CELL"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/AnimatedSprite2/PlayersMenu/CELL"]
+position = Vector2( 28.823, 20.1951 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 6 )
+animation = "NotSelected"
+
+[node name="SKIN" type="Control" parent="CanvasLayer/AnimatedSprite2/PlayersMenu"]
+margin_left = 458.998
+margin_top = 15.9728
+margin_right = 618.998
+margin_bottom = 63.9728
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersMenu/SKIN"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -16.5
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "SKIN"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/AnimatedSprite2/PlayersMenu/SKIN"]
+position = Vector2( 32.823, 21.5 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 7 )
+animation = "NotSelected"
+
+[node name="PlayersSTAT" type="Control" parent="CanvasLayer/AnimatedSprite2"]
+visible = false
+margin_left = -296.0
+margin_top = -152.0
+margin_right = 297.0
+margin_bottom = -95.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DF" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSTAT"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = -33.5
+margin_right = 160.0
+margin_bottom = -0.5
+custom_fonts/font = SubResource( 3 )
+text = "DF: 0 (0)"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AT" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSTAT"]
+margin_left = 7.0
+margin_right = 244.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+text = "AT: 0 (0)"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EXP" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSTAT"]
+margin_left = 348.0
+margin_right = 593.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 3 )
+text = "EXP: 0"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NEXT" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSTAT"]
+margin_left = 348.0
+margin_top = 24.0
+margin_right = 593.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 3 )
+text = "NEXT: 10"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weapon" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSTAT"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = -10.0
+margin_right = 291.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 3 )
+text = "Weapon: Stick"
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ARMOR" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSTAT"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 348.0
+margin_top = -10.0
+margin_right = 593.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 3 )
+text = "ARMOR: Bandage"
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersSKIN" type="Control" parent="CanvasLayer/AnimatedSprite2"]
+visible = false
+margin_left = -296.0
+margin_top = -152.0
+margin_right = 297.0
+margin_bottom = -71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AU_UT" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSKIN"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 19.0
+margin_top = -16.5
+margin_right = 181.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "Undertale"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AU_UF" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSKIN"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = -16.5
+margin_right = 149.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "Underfell"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AU_US" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersSKIN"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = -16.5
+margin_right = -22.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "Underswap"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersUTSKINS" type="Control" parent="CanvasLayer/AnimatedSprite2"]
+visible = false
+margin_left = -296.0
+margin_top = -152.0
+margin_right = 297.0
+margin_bottom = -71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FRISK" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersUTSKINS"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 19.0
+margin_top = -16.5
+margin_right = 181.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "FRISK"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CHARA" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersUTSKINS"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = -16.5
+margin_right = 149.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "CHARA"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CHRIS" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersUTSKINS"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = -16.5
+margin_right = -22.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "CHRIS"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersInventory1" type="Control" parent="CanvasLayer/AnimatedSprite2"]
+margin_left = -296.0
+margin_top = -152.0
+margin_right = 297.0
+margin_bottom = -71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM1" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 19.0
+margin_top = -16.5
+margin_right = 181.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "EMPTY"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM2" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = -16.5
+margin_right = 149.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "EMPTY"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM3" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory1"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = -16.5
+margin_right = -22.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "EMPTY"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Page1" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -298.5
+margin_top = -41.5
+margin_right = 299.5
+margin_bottom = -9.5
+custom_fonts/font = SubResource( 8 )
+text = "PAGE 1"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersInventory2" type="Control" parent="CanvasLayer/AnimatedSprite2"]
+visible = false
+margin_left = -296.0
+margin_top = -152.0
+margin_right = 297.0
+margin_bottom = -71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM1" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 19.0
+margin_top = -16.5
+margin_right = 181.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "EMPTY"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM2" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = -16.5
+margin_right = 149.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "EMPTY"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM3" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = -16.5
+margin_right = -22.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "EMPTY"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Page2" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -298.5
+margin_top = -41.5
+margin_right = 299.5
+margin_bottom = -9.5
+custom_fonts/font = SubResource( 8 )
+text = "PAGE 2"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersInventory3" type="Control" parent="CanvasLayer/AnimatedSprite2"]
+visible = false
+margin_left = -296.0
+margin_top = -152.0
+margin_right = 297.0
+margin_bottom = -71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM1" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 19.0
+margin_top = -16.5
+margin_right = 181.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "EMPTY"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM2" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = -16.5
+margin_right = 149.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 3 )
+text = "EMPTY"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Page3" type="Label" parent="CanvasLayer/AnimatedSprite2/PlayersInventory3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -298.5
+margin_top = -41.5
+margin_right = 299.5
+margin_bottom = -9.5
+custom_fonts/font = SubResource( 8 )
+text = "PAGE 3"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/AnimatedSprite2"]
+stream = ExtResource( 20 )
+volume_db = 10.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="CanvasLayer/AnimatedSprite2"]
+stream = ExtResource( 23 )
+volume_db = 10.0
+
+[node name="Timer" type="Timer" parent="CanvasLayer/AnimatedSprite2"]
+wait_time = 0.05
+autostart = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 160, 30 )
+frames = SubResource( 9 )
+animation = "1"
+
+[node name="Stats" type="Control" parent="CanvasLayer"]
+margin_left = 159.0
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 510.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 480.297, 270 )
+scale = Vector2( 0.50031, 0.5 )
+frames = SubResource( 10 )
+animation = "1"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 160.0
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 510.0
+mouse_filter = 1
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
+autoplay = "FadeIn"
+anims/FadeIn = SubResource( 11 )
+anims/FadeOut = SubResource( 12 )
+
+[node name="TitleBar" type="Control" parent="CanvasLayer"]
+margin_right = 960.0
+margin_bottom = 24.0
+mouse_filter = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UTOL" type="Sprite" parent="CanvasLayer/TitleBar"]
+position = Vector2( 12, 13 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="CanvasLayer/TitleBar"]
+margin_left = 24.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 14 )
+text = "Undertale Online"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -46.0
+margin_bottom = 24.0
+mouse_filter = 1
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 18 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinimizeButton" type="Button" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -92.0
+margin_right = -46.0
+margin_bottom = 24.0
+mouse_filter = 1
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 18 )
+text = "−"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="CanvasLayer/TitleBar" to="CanvasLayer/TitleBar" method="_on_TitleBar_gui_input"]
+[connection signal="pressed" from="CanvasLayer/ExitButton" to="CanvasLayer/TitleBar" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/MinimizeButton" to="CanvasLayer/TitleBar" method="_on_MinimizeButton_pressed"]

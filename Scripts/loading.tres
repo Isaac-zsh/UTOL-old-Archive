@@ -1,0 +1,12 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Players/Frisk/WalkRight2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Players/Frisk/WalkRight.png" type="Texture" id=8]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]

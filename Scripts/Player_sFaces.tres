@@ -1,0 +1,47 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/UI/Player_s Faces/Chris1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/UI/Player_s Faces/RobTopFreak1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/Player_s Faces/Chara1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/Player_s Faces/Samuel1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/Player_s Faces/Sign1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/Player_s Faces/marker_portrait.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/Player_s Faces/Frisk1.png" type="Texture" id=7]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "RobTopFreak",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Chara",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "Chris",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "WallText",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "Frisk",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Sign",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "Samuel",
+"speed": 0.0
+} ]

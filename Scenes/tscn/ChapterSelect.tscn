@@ -1,0 +1,313 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Sprites/UI/AccountSlot.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/UI/AccountSlotSelected.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/ChapterSelect.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/HoverBarButton.tres" type="StyleBox" id=4]
+[ext_resource path="res://Scripts/PressedBarButton.tres" type="StyleBox" id=5]
+[ext_resource path="res://Sprites/Borders/bg_border_truelab.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Sprites/RoomTesting/2bg_border_ruins.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Sprites/RoomTesting/1bg_border_ruins.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/TitleBar.gd" type="Script" id=9]
+[ext_resource path="res://Sprites/Logos/UTOL.png" type="Texture" id=10]
+[ext_resource path="res://Audios/mus_wind.ogg" type="AudioStream" id=11]
+[ext_resource path="res://SFX/saving.ogg" type="AudioStream" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "default",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "2",
+"speed": 0.0
+} ]
+
+[sub_resource type="DynamicFontData" id=2]
+resource_local_to_scene = true
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+resource_local_to_scene = true
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
+font_data = SubResource( 2 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "slide"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -360, 270 ), Vector2( -360, 270 ), Vector2( 480, 270 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Slide:playback_speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8, 1.7, 1.9, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.0, 1.0, 0.1, 0.25, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TEXT:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "", "", "Chapter One:
+The Lost Soul" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TEXT:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.9, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TEXT2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.7, 2.4, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 0, 1 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "1",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "2",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "3",
+"speed": 0.0
+} ]
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=8]
+resource_local_to_scene = true
+antialiased = false
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+resource_local_to_scene = true
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.180392, 0.180392, 0.360784, 0 )
+
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://Fonts/ttf/arial.ttf"
+
+[sub_resource type="DynamicFont" id=13]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 12 )
+
+[node name="ChapterSelect" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ChapterSlot1" type="AnimatedSprite" parent="."]
+position = Vector2( -276, 270 )
+frames = SubResource( 1 )
+speed_scale = 0.2
+
+[node name="TEXT" type="Label" parent="ChapterSlot1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -308.0
+margin_top = -54.0
+margin_right = -308.0
+margin_bottom = -54.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slide" type="AnimationPlayer" parent="ChapterSlot1"]
+autoplay = "slide"
+anims/slide = SubResource( 4 )
+
+[node name="TEXT2" type="Label" parent="ChapterSlot1"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -280.0
+margin_top = 58.0
+margin_right = -325.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 3 )
+text = "Play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 480, 270 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 5 )
+animation = "3"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 160.0
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 509.0
+mouse_filter = 1
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+autoplay = "FadeIn"
+anims/FadeIn = SubResource( 6 )
+anims/FadeOut = SubResource( 7 )
+
+[node name="TitleBar2" type="Control" parent="."]
+margin_right = 960.0
+margin_bottom = 24.0
+mouse_filter = 1
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UTOL" type="Sprite" parent="TitleBar2"]
+position = Vector2( 12, 13 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="TitleBar2"]
+margin_left = 24.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 9 )
+text = "Undertale Online"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 912.0
+margin_right = 960.0
+margin_bottom = 24.0
+mouse_filter = 1
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 13 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinimizeButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 864.0
+margin_right = 912.0
+margin_bottom = 24.0
+mouse_filter = 1
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 13 )
+text = "−"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoidSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+volume_db = 1.0
+
+[connection signal="animation_finished" from="ChapterSlot1/Slide" to="." method="_on_Slide_animation_finished"]
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="gui_input" from="TitleBar2" to="TitleBar2" method="_on_TitleBar_gui_input"]
+[connection signal="pressed" from="ExitButton" to="TitleBar2" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="MinimizeButton" to="TitleBar2" method="_on_MinimizeButton_pressed"]

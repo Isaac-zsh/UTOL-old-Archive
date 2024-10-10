@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Room2.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Sprites/Room2/1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 314.876, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 39.7368, 16.725 )
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Room2" type="Node2D"]
+position = Vector2( 684, 325 )
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="FallRoomSpr1" type="Sprite" parent="Area2D/CollisionShape2D"]
+position = Vector2( -521, -144 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -521.573, 271.548 )
+shape = SubResource( 2 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( -520.302, -284.966 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -522, -142 )
+scale = Vector2( 2, 2 )
+polygon = PoolVector2Array( 159.5, 212, 154.5, 212, 154.438, -63.4244, 52.5415, -63.4244, 52.5415, -49.4078, 21.831, -49.2503, 21.5, -104, -19.5, -104, -19.6042, -49.1636, -49.483, -49.1636, -49.6317, -62.8395, -154.43, -62.9882, -154.5, 212, -159.5, 212, -159.5, -212, 159.5, -212 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -12.0
+margin_top = -11.0
+margin_right = 975.0
+margin_bottom = 551.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
+anims/FadeOut = SubResource( 4 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="OtherPlayers" type="YSort" parent="YSort"]
+
+[connection signal="animation_finished" from="CanvasLayer/ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

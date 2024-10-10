@@ -1,0 +1,596 @@
+[gd_scene load_steps=102 format=2]
+
+[ext_resource path="res://Sprites/Players/Samuel/WalkDown1.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Players/Frisk/WalkLeft2.png" type="Texture" id=3]
+[ext_resource path="res://GlobalScene.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Players/Frisk/WalkLeft.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Players/Frisk/WalkRight2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Players/Frisk/WalkUp1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Players/Frisk/WalkDown3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Players/Frisk/WalkDown1.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Players/Frisk/WalkDown2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Players/Frisk/WalkUp2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Players/Frisk/WalkUp3.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Players/Samuel/WalkDown3.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Players/Samuel/WalkDown2.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Players/Samuel/WalkLeft2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Players/Samuel/WalkUp2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Players/Samuel/WalkLeft.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Players/Samuel/WalkUp1.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Players/Samuel/WalkRight2.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Players/Frisk/WalkRight.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Players/Samuel/WalkUp3.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Players/Samuel/WalkRight.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkRight.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkRight1.png" type="Texture" id=24]
+[ext_resource path="res://determinationmonoweb-webfont.ttf" type="DynamicFontData" id=25]
+[ext_resource path="res://Label.gd" type="Script" id=26]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkRight2.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkRight3.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkRight4.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkRight5.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkLeft.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkLeft2.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkLeft5.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkLeft3.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkLeft4.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkLeft1.png" type="Texture" id=36]
+[ext_resource path="res://AnimatedSprite.gd" type="Script" id=37]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkDown.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkDown2.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkBack4.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkDown5.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkDown3.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkDown4.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkBack5.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkBack1.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkDown1.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkBack3.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkBack2.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/Players/Robtop Freak/WalkBack.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/Players/Chris/WalkUp2.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/Players/Chris/WalkLeft.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/Players/Chris/WalkLeft2.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/Players/Chris/WalkUp1.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/Players/Chris/WalkUp3.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/Players/Chris/WalkRight2.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/Players/Chris/WalkRight.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/Players/Chris/WalkDown2.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/Players/Chris/WalkDown3.png" type="Texture" id=58]
+[ext_resource path="res://Sprites/Players/Chris/WalkDown1.png" type="Texture" id=59]
+[ext_resource path="res://Sprites/Players/Chara/WalkDown1.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/Players/Chara/WalkLeft.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/Players/Chara/WalkUp3.png" type="Texture" id=62]
+[ext_resource path="res://Sprites/Players/Chara/WalkUp1.png" type="Texture" id=63]
+[ext_resource path="res://Sprites/Players/Chara/WalkUp2.png" type="Texture" id=64]
+[ext_resource path="res://Sprites/Players/Chara/WalkRight.png" type="Texture" id=65]
+[ext_resource path="res://Sprites/Players/Chara/WalkLeft1.png" type="Texture" id=66]
+[ext_resource path="res://Sprites/Players/Chara/WalkDown2.png" type="Texture" id=67]
+[ext_resource path="res://Sprites/Players/Chara/WalkRight1.png" type="Texture" id=68]
+[ext_resource path="res://Sprites/Players/Chara/WalkDown3.png" type="Texture" id=69]
+[ext_resource path="res://Sprites/Others/Skin_Loading/2.png" type="Texture" id=70]
+[ext_resource path="res://Sprites/Others/Skin_Loading/3.png" type="Texture" id=71]
+[ext_resource path="res://Sprites/Others/Skin_Loading/1.png" type="Texture" id=72]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkUp1.png" type="Texture" id=73]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkUp2.png" type="Texture" id=74]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkLeft.png" type="Texture" id=75]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkUp3.png" type="Texture" id=76]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkRight.png" type="Texture" id=77]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkRight2.png" type="Texture" id=78]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkLeft2.png" type="Texture" id=79]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkDown1.png" type="Texture" id=80]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkDown2.png" type="Texture" id=81]
+[ext_resource path="res://Sprites/Players/UF!Frisk/WalkDown3.png" type="Texture" id=82]
+[ext_resource path="res://PanelContainer.gd" type="Script" id=83]
+[ext_resource path="res://ChatBox.gd" type="Script" id=84]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+
+func _ready():
+	self.limit_bottom = Globals.limit_bottom
+	self.limit_left = Globals.limit_left
+	self.limit_right = Globals.limit_right
+	self.limit_top = Globals.limit_top
+"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 17 ) ],
+"loop": false,
+"name": "samuel-left-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "frisk-right-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 82 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 80 ) ],
+"loop": true,
+"name": "uffrisk-front-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "frisk-left-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 78 ), ExtResource( 77 ) ],
+"loop": true,
+"name": "uffrisk-right-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 74 ), ExtResource( 73 ), ExtResource( 76 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "uffrisk-back-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "chara-left-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": false,
+"name": "rtf-right-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 79 ), ExtResource( 75 ) ],
+"loop": true,
+"name": "uffrisk-left-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 59 ), ExtResource( 57 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "chris-front-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "frisk-back-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "rtf-right-walk",
+"speed": 11.0
+}, {
+"frames": [ ExtResource( 80 ) ],
+"loop": false,
+"name": "uffrisk-front-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 60 ) ],
+"loop": false,
+"name": "chara-front-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 38 ) ],
+"loop": false,
+"name": "rtf-front-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "rtf-front-walk",
+"speed": 11.0
+}, {
+"frames": [ ExtResource( 65 ) ],
+"loop": false,
+"name": "chara-right-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "samuel-left-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "samuel-back-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 62 ), ExtResource( 63 ) ],
+"loop": true,
+"name": "chara-back-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 63 ) ],
+"loop": false,
+"name": "chara-back-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "chris-left-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 75 ) ],
+"loop": false,
+"name": "uffrisk-left-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "samuel-right-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 49 ) ],
+"loop": false,
+"name": "rtf-back-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "frisk-back-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "chris-right-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 61 ) ],
+"loop": false,
+"name": "chara-left-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": false,
+"name": "rtf-left-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 53 ) ],
+"loop": false,
+"name": "chris-back-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": false,
+"name": "samuel-back-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "frisk-left-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": false,
+"name": "samuel-right-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "chris-back-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 1 ), ExtResource( 14 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "samuel-front-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 51 ) ],
+"loop": false,
+"name": "chris-left-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "rtf-left-walk",
+"speed": 11.0
+}, {
+"frames": [ ExtResource( 73 ) ],
+"loop": false,
+"name": "uffrisk-back-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 56 ) ],
+"loop": false,
+"name": "chris-right-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 59 ) ],
+"loop": false,
+"name": "chris-front-idle",
+"speed": 0.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "no_player",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "chara-right-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 45 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 40 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "rtf-back-walk",
+"speed": 11.0
+}, {
+"frames": [ ExtResource( 77 ) ],
+"loop": false,
+"name": "uffrisk-right-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 67 ), ExtResource( 60 ), ExtResource( 69 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "chara-front-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "samuel-front-idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "frisk-right-idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "frisk-front-walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "frisk-front-idle",
+"speed": 0.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 25 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 72 ), ExtResource( 70 ), ExtResource( 71 ) ],
+"loop": true,
+"name": "1",
+"speed": 2.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="DynamicFontData" id=6]
+resource_local_to_scene = true
+font_path = "res://determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+resource_local_to_scene = true
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 6 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 19, 7 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 0.243137 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 0 )
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="DynamicFontData" id=12]
+resource_local_to_scene = true
+font_path = "res://determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=13]
+resource_local_to_scene = true
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 12 )
+
+[sub_resource type="DynamicFont" id=14]
+resource_local_to_scene = true
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 12 )
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=17]
+resource_local_to_scene = true
+font_data = SubResource( 12 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_smoothed = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Camera2D"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "uffrisk-front-idle"
+script = ExtResource( 37 )
+
+[node name="Label" type="Label" parent="Camera2D"]
+margin_left = -120.0
+margin_top = -49.0
+margin_right = 120.0
+margin_bottom = -32.0
+custom_fonts/font = SubResource( 3 )
+text = "Player_Name"
+align = 1
+valign = 1
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Camera2D"]
+position = Vector2( 0, -0.967322 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 4 )
+animation = "1"
+
+[node name="PanelContainer" type="PanelContainer" parent="Camera2D"]
+margin_left = -68.0
+margin_top = -85.0
+margin_right = 68.0
+margin_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 83 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Camera2D/PanelContainer"]
+margin_left = 2.0
+margin_top = 7.0
+margin_right = 134.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 7 )
+align = 1
+valign = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 23 )
+shape = SubResource( 8 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer2"]
+script = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2( 150, 375 )
+transform = Transform2D( 1, 0, 0, 1, 150, 375 )
+
+[node name="ChatBox" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -107.0
+margin_top = -118.0
+margin_right = -667.0
+margin_bottom = -426.0
+script = ExtResource( 84 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ChatBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ChatBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -14.0
+margin_bottom = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ChatBox/VBoxContainer"]
+margin_right = 376.0
+margin_bottom = 192.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
+bbcode_enabled = true
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ChatBox"]
+margin_left = 8.0
+margin_top = 194.0
+margin_right = 384.0
+margin_bottom = 226.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/ChatBox/HBoxContainer"]
+margin_top = 7.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/ChatBox/HBoxContainer"]
+margin_left = 4.0
+margin_right = 376.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/focus = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+placeholder_text = "Type a message then Press Enter"
+placeholder_alpha = 0.224
+
+[node name="Timer" type="Timer" parent="CanvasLayer/ChatBox"]
+wait_time = 0.07
+autostart = true
+[connection signal="timeout" from="CanvasLayer/ChatBox/Timer" to="CanvasLayer/ChatBox" method="_on_Timer_timeout"]

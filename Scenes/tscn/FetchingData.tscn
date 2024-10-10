@@ -1,0 +1,236 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Sprites/ProgressBar/1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/FetchingData.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Logos/LearningGodot.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Borders/bg_border_truelab.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Sprites/RoomTesting/2bg_border_ruins.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Sprites/RoomTesting/1bg_border_ruins.png" type="Texture" id=6]
+[ext_resource path="res://SFX/saving.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scripts/loading.tres" type="SpriteFrames" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "move"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 208, 60 ), Vector2( 208, 38.41 ), Vector2( 208, 60 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 144.41 ), Vector2( -10, 144.41 ), Vector2( 0, 144.41 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Panel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 144.41 ), Vector2( -10, 144.41 ), Vector2( 0, 144.41 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "1",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "3",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "2",
+"speed": 0.0
+} ]
+
+[sub_resource type="DynamicFontData" id=5]
+resource_local_to_scene = true
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+resource_local_to_scene = true
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 5 )
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 160.0
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 510.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -215.5
+margin_top = -90.0
+margin_right = 215.5
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UTOL" type="Sprite" parent="Control/Control"]
+visible = false
+position = Vector2( 208, 60 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Control/UTOL"]
+autoplay = "move"
+anims/move = SubResource( 1 )
+
+[node name="TextureProgress" type="TextureProgress" parent="Control/Control"]
+margin_top = 144.41
+margin_right = 861.0
+margin_bottom = 213.41
+rect_scale = Vector2( 0.5, 0.5 )
+texture_progress = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Control/TextureProgress"]
+"anims/New Anim" = SubResource( 2 )
+
+[node name="Panel" type="Panel" parent="Control/Control"]
+margin_top = 144.41
+margin_right = 431.0
+margin_bottom = 179.41
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Control"]
+visible = false
+position = Vector2( 215.5, 47.25 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 8 )
+frame = 1
+
+[node name="Frisk" type="AnimatedSprite" parent="Control/Control"]
+position = Vector2( 215.5, 47.25 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 480, 270 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 4 )
+animation = "3"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 384.0
+margin_right = 800.0
+margin_bottom = 417.0
+custom_fonts/font = SubResource( 6 )
+text = "Loading..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -17.0
+margin_top = -14.0
+margin_right = 971.0
+margin_bottom = 558.0
+mouse_filter = 1
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+autoplay = "FadeIn"
+anims/FadeIn = SubResource( 7 )
+anims/FadeOut = SubResource( 8 )
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

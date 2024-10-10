@@ -1,0 +1,13 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+resource_local_to_scene = true
+antialiased = false
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[resource]
+resource_local_to_scene = true
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )

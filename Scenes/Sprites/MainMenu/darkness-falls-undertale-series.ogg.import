@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/darkness-falls-undertale-series.ogg-cecb16f365fe74af542918a1f75acd7b.oggstr"
+
+[deps]
+
+source_file="res://Scenes/Sprites/MainMenu/darkness-falls-undertale-series.ogg"
+dest_files=[ "res://.import/darkness-falls-undertale-series.ogg-cecb16f365fe74af542918a1f75acd7b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

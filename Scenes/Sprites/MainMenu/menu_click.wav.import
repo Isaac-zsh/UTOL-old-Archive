@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menu_click.wav-f553cc3c80b77712c3aa2245ffe9e4df.sample"
+
+[deps]
+
+source_file="res://Scenes/Sprites/MainMenu/menu_click.wav"
+dest_files=[ "res://.import/menu_click.wav-f553cc3c80b77712c3aa2245ffe9e4df.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

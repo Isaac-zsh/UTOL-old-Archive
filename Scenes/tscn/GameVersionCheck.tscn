@@ -1,0 +1,259 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://SFX/saving.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Sprites/Characters/AnnoyingDog/dog.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/GameVersionCheck.gd" type="Script" id=3]
+[ext_resource path="res://addons/gamejolt_api_v2/main.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/TitleBar.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/HoverBarButton.tres" type="StyleBox" id=6]
+[ext_resource path="res://Sprites/Logos/UTOL.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/PressedBarButton.tres" type="StyleBox" id=8]
+[ext_resource path="res://Sprites/Borders/bg_border_truelab.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Borders/1bg_border_ruins.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Borders/2bg_border_ruins.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFontData" id=1]
+resource_local_to_scene = true
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 32
+font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Checking Game Version", "Checking Game Version.", "Checking Game Version..", "Checking Game Version..." ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+resource_local_to_scene = true
+size = 32
+font_data = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "Normal",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "1",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "3",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "2",
+"speed": 0.0
+} ]
+
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=9]
+resource_local_to_scene = true
+antialiased = false
+font_path = "res://Fonts/ttf/determinationmonoweb-webfont.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+resource_local_to_scene = true
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 9 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.180392, 0.180392, 0.360784, 0 )
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://Fonts/ttf/arial.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 13 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CGV" type="Label" parent="."]
+margin_right = 960.0
+margin_bottom = 540.0
+custom_fonts/font = SubResource( 2 )
+text = "Checking Game Version"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CGV"]
+autoplay = "TextChanging1"
+anims/TextChanging1 = SubResource( 3 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CGV"]
+autoplay = "FadingIn"
+anims/FadingIn = SubResource( 4 )
+
+[node name="Status" type="Label" parent="."]
+modulate = Color( 1, 1, 0, 1 )
+margin_left = 192.0
+margin_top = 190.0
+margin_right = 768.0
+margin_bottom = 286.0
+custom_fonts/font = SubResource( 5 )
+align = 1
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dog" type="AnimatedSprite" parent="."]
+position = Vector2( 464, 352 )
+frames = SubResource( 6 )
+animation = "Normal"
+
+[node name="GameJoltAPI" type="HTTPRequest" parent="."]
+script = ExtResource( 4 )
+private_key = "102984c886d1ed359f6ed5df2a281869"
+game_id = "630718"
+verbose = false
+
+[node name="Connected" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 480, 270 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 7 )
+animation = "1"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+margin_left = 160.0
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 510.0
+mouse_filter = 1
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/FadeOut = SubResource( 8 )
+
+[node name="TitleBar" type="Control" parent="."]
+margin_right = 960.0
+margin_bottom = 24.0
+mouse_filter = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UTOL" type="Sprite" parent="TitleBar"]
+position = Vector2( 12, 13 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="TitleBar"]
+margin_left = 24.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 10 )
+text = "Undertale Online"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 912.0
+margin_right = 960.0
+margin_bottom = 24.0
+mouse_filter = 1
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 14 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinimizeButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 864.0
+margin_right = 912.0
+margin_bottom = 24.0
+mouse_filter = 1
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 14 )
+text = "−"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gamejolt_request_completed" from="GameJoltAPI" to="." method="_on_GameJoltAPI_gamejolt_request_completed"]
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="gui_input" from="TitleBar" to="TitleBar" method="_on_TitleBar_gui_input"]

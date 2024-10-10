@@ -1,0 +1,192 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scripts/Room5.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Sprites/Room5/1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Miscellaneous/Lever/1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Miscellaneous/Lever/2.png" type="Texture" id=4]
+[ext_resource path="res://Audios/ButtonPress.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sprites/Others/RuinsWater/2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Others/RuinsWater/1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Others/RuinsWater/0.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 58, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 20, 79 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "2",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "1",
+"speed": 0.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 0, 30 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "2",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "1",
+"speed": 0.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 0, 22 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 0, 22 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 0, 30 )
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "WaterAnim",
+"speed": 2.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 684, 326 )
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="FallRoomSpr1" type="Sprite" parent="Area2D/CollisionShape2D"]
+position = Vector2( -521, -145 )
+texture = ExtResource( 2 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -977, 84 )
+shape = SubResource( 2 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( 195, -91 )
+shape = SubResource( 3 )
+
+[node name="Area2D4" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D4"]
+position = Vector2( -474, -261 )
+frames = SubResource( 4 )
+animation = "2"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2( -472, -246 )
+shape = SubResource( 5 )
+
+[node name="Area2D5" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D5"]
+position = Vector2( -82, -261 )
+frames = SubResource( 6 )
+animation = "2"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2( -79, -246 )
+shape = SubResource( 5 )
+
+[node name="Area2D6" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D6"]
+position = Vector2( -530, -238 )
+shape = SubResource( 7 )
+
+[node name="Area2D7" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D7"]
+position = Vector2( -144, -238 )
+shape = SubResource( 8 )
+
+[node name="Area2D8" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D8"]
+position = Vector2( -6, -246 )
+shape = SubResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -521, -145 )
+polygon = PoolVector2Array( 736, 43, 662, 43, 652, 34, 652, -77, 296, -77, 296, 41, 216, 41, 216, -77, -176, -77, -176, 41, -256, 41, -256, -76, -651, -76, -651, 196, -503, 196, -494, 205, -494, 239, -736.5, 239.5, -736.5, -239.5, 736.5, -239.5 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -530, -145 )
+polygon = PoolVector2Array( 744, 238, -409, 240, -409, 204, -402, 195, -247, 195, -247, 119, -167, 119, -167, 195, 225, 195, 225, 119, 305, 119, 305, 195, 662, 195, 662, 125, 672, 116, 745, 116 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -17.0
+margin_top = -14.0
+margin_right = 971.0
+margin_bottom = 558.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
+anims/FadeOut = SubResource( 10 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -737, -96 )
+frames = SubResource( 11 )
+animation = "WaterAnim"
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -265, -96 )
+frames = SubResource( 11 )
+animation = "WaterAnim"
+frame = 2
+
+[connection signal="animation_finished" from="CanvasLayer/ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

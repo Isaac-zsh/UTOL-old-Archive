@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mus_waterfall.ogg-272b78a537bdb3ca6f9a497dba5a3b51.oggstr"
+
+[deps]
+
+source_file="res://Audios/networkscreen/mus_waterfall.ogg"
+dest_files=[ "res://.import/mus_waterfall.ogg-272b78a537bdb3ca6f9a497dba5a3b51.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

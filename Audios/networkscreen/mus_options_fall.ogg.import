@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mus_options_fall.ogg-43319a7b23691814024f2535258c00c5.oggstr"
+
+[deps]
+
+source_file="res://Audios/networkscreen/mus_options_fall.ogg"
+dest_files=[ "res://.import/mus_options_fall.ogg-43319a7b23691814024f2535258c00c5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
